@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject target;
-    public float damping = 1;
-    Vector3 offset;
-
-    void Start() {
-        offset = transform.position - target.transform.position;
+    public GameObject ballsphere;
+    private Vector3 distance;
+    // Start is called before the first frame update
+    void Start()
+    {
+        distance=transform.position - ballsphere.transform.position;
     }
-    
-    void LateUpdate() {
-        Vector3 desiredPosition = target.transform.position + offset;
-        Vector3 position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * damping);
-        transform.position = position;
 
-        transform.LookAt(target.transform.position);
-    }
+    // Update is called once per frame
+    void Update()
+    {
+        transform.position = distance + ballsphere.transform.position;
+    } 
 }
