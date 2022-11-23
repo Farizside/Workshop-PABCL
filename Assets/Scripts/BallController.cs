@@ -18,15 +18,15 @@ public class BallController : MonoBehaviour
     void Update () 
     {
         // Up or Down
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W))
             GetComponent<Rigidbody>().AddForce(Camera.main.transform.parent.forward * speed);
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.S))
             GetComponent<Rigidbody>().AddForce(Camera.main.transform.parent.forward * -speed);
 
         // Left or Right
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
             GetComponent<Rigidbody>().AddForce(Camera.main.transform.parent.right * -speed);
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.D))
             GetComponent<Rigidbody>().AddForce(Camera.main.transform.parent.right * speed);
 
         // Jump
