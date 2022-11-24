@@ -19,11 +19,12 @@ public class CameraFollow : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, target.position, 10.0f * Time.fixedDeltaTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, curRotation, 0.125f);
 
-        if (Input.GetKey(KeyCode.Q)) // Rotate to left
+        if (Input.GetKey(KeyCode.LeftArrow)) // Rotate to left
         {
             curRotation *= Quaternion.Euler(0, -4, 0);
         }
-        else if (Input.GetKey(KeyCode.E)) // Rotate to right
+
+        if (Input.GetKey(KeyCode.RightArrow)) // Rotate to right
         {
             curRotation *= Quaternion.Euler(0, 4, 0);
         }
