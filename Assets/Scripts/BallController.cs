@@ -10,6 +10,8 @@ public class BallController : MonoBehaviour
 
     private bool _canJump;
 
+    public Camera view;
+
     // Use this for initialization
     void Start () {
 		
@@ -21,21 +23,21 @@ public class BallController : MonoBehaviour
         // Up or Down
         if (Input.GetKey(KeyCode.W))
         {
-            GetComponent<Rigidbody>().AddForce(Camera.main.transform.parent.forward * speed);
+            GetComponent<Rigidbody>().AddForce(view.transform.forward * speed);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            GetComponent<Rigidbody>().AddForce(Camera.main.transform.parent.forward * -speed);
+            GetComponent<Rigidbody>().AddForce(view.transform.forward * -speed);
         }
 
         // Left or Right
         if (Input.GetKey(KeyCode.A))
         {
-            GetComponent<Rigidbody>().AddForce(Camera.main.transform.parent.right * -speed);
+            GetComponent<Rigidbody>().AddForce(view.transform.right * -speed);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            GetComponent<Rigidbody>().AddForce(Camera.main.transform.parent.right * speed);
+            GetComponent<Rigidbody>().AddForce(view.transform.right * speed);
         }
 
         // Jump
