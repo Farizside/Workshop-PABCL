@@ -16,8 +16,8 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate () 
     {
-        transform.position = Vector3.Lerp(transform.position, target.position, 10.0f * Time.fixedDeltaTime);
-        transform.rotation = Quaternion.Lerp(transform.rotation, curRotation, 0.125f);
+        transform.position = Vector3.Lerp(transform.position, target.position, 100.0f * Time.fixedDeltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, curRotation, 0.500f);
 
         if (Input.GetKey(KeyCode.LeftArrow)) // Rotate to left
         {
