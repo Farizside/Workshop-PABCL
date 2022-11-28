@@ -8,16 +8,9 @@ public class PickupScript : MonoBehaviour
 {
     private int _coins;
 
-    public Text coinText;
-
     public void Start()
     {
         _coins = 0;
-    }
-
-    public void Update()
-    {
-        DisplayCoin();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,11 +19,12 @@ public class PickupScript : MonoBehaviour
         {
             _coins++;
             Destroy(other.gameObject);
+            Debug.Log(_coins);
         }
     }
 
-    private void DisplayCoin()
+    public int GetCoins()
     {
-        coinText.text = _coins.ToString();
+        return _coins;
     }
 }
