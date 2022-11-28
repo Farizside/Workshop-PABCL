@@ -19,7 +19,6 @@ public class BallController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Physics.gravity = new Vector3(0, -30, 0);
-        Debug.Log(Physics.gravity);
     }
 	
     // Update is called once per frame
@@ -62,6 +61,16 @@ public class BallController : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             _isGrounded = true;
+        }
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Pickup"))
+        {
+            gm.collectedStars++;
+            Destroy(other.gameObject);
+            gm.DisplayStars();
         }
     }
 }

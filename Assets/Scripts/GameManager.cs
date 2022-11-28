@@ -7,31 +7,44 @@ using Image = UnityEngine.UI.Image;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject panel;
+    
     public bool isGameOver;
     
-    public Image[] stars;
+    public GameObject[] stars;
 
-    public PickupScript pickupScript;
+    public int collectedStars;
 
     void Start()
     {
         isGameOver = false;
+        panel.SetActive(false);
+        collectedStars = 0;
     }
 
     void Update()
     {
-        DisplayStars();
-        if (pickupScript.GetCoins() == stars.Length)
+        if (collectedStars == stars.Length)
         {
-            isGameOver = true;
+            GameOver();
         }
     }
 
-    void DisplayStars()
+    public void DisplayStars()
     {
-        for (int i = 0; i < pickupScript.GetCoins(); i++)
+        for (int i = 0; i < collectedStars; i++)
         {
-            stars[i].color = Color.black;
+            stars[i].GetComponent<Image>().color = Color.black;
+        }
+    }
+
+    void GameOver()
+    {
+        isGameOver = true;
+        panel.SetActive(true);
+        foreach (var star in stars)
+        {
+            star.SetActive(false);
         }
     }
 }
