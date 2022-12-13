@@ -13,6 +13,8 @@ public class BallController : MonoBehaviour
     private bool _isGrounded;
     public GameManager gm;
 
+    public SceneScript scene;
+
     public Camera view;
 
     // Use this for initialization
@@ -60,14 +62,11 @@ public class BallController : MonoBehaviour
         // Restart
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Restart();
+            scene.Restart();
         }
     }
 
-    private void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == 6)
@@ -86,7 +85,7 @@ public class BallController : MonoBehaviour
         }
         if (other.CompareTag("Bottom"))
         {
-            Restart();
+            scene.Restart();
         }
     }
 }

@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
             stars[i].GetComponent<Image>().color = Color.yellow;
         }
     }
+    
 
     void GameOver()
     {
