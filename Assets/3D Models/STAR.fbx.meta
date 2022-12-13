@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 562da6c2d2b148a4097f5c91693d0724
 ModelImporter:
   serializedVersion: 21202
@@ -9,6 +10,13 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material.001
     second: {fileID: 2100000, guid: 04d32fa79a270a642b8e5bc5caec410f, type: 2}
+=======
+guid: 1a783b4ee93d51f4abcdf64a3290d042
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects: {}
+>>>>>>> Stashed changes
   materials:
     materialImportMode: 2
     materialName: 0
@@ -42,17 +50,29 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
+<<<<<<< Updated upstream
     addColliders: 1
+=======
+    addColliders: 0
+>>>>>>> Stashed changes
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
+<<<<<<< Updated upstream
     importCameras: 0
+=======
+    importCameras: 1
+>>>>>>> Stashed changes
     importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
+<<<<<<< Updated upstream
     generateSecondaryUV: 1
+=======
+    generateSecondaryUV: 0
+>>>>>>> Stashed changes
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
