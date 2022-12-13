@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 {
@@ -53,8 +54,19 @@ public class BallController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
         {
             rb.AddForce(new Vector3(0, jump, 0));
-            _isGrounded = false;
+            _isGrounded = false;    
         }
+        
+        // Restart
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
+        }
+    }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -71,6 +83,10 @@ public class BallController : MonoBehaviour
             gm.collectedStars++;
             Destroy(other.gameObject);
             gm.DisplayStars();
+        }
+        if (other.CompareTag("Bottom"))
+        {
+            Restart();
         }
     }
 }
