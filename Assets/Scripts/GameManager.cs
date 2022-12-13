@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < collectedStars; i++)
         {
-            stars[i].GetComponent<Image>().color = Color.black;
+            stars[i].GetComponent<Image>().color = Color.yellow;
         }
     }
 
